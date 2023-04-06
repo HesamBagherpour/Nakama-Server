@@ -1,2 +1,2 @@
-# Nakama-server
-Nakama-server
+# nakama-server-script
+

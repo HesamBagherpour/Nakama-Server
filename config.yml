@@ -1,0 +1,80 @@
+name: nakama-node-1
+data_dir: '/mnt/e/Programming/truck-world/projects/server/linux/nakama/data/'
+
+logger:
+  stdout: true
+  level: 'info'
+  file: '/mnt/e/Programming/truck-world/projects/server/linux/nakama/data/logfile.log'
+
+metrics:
+  reporting_freq_sec: 60
+  namespace: ''
+  prometheus_port: 0
+
+database:
+  address:
+  - 'root@localhost:26257/nakama-truck-world'
+  conn_max_lifetime_ms: 0
+  max_open_conns: 0
+  max_idle_conns: 100
+
+runtime:
+  env:
+  - 'example_apikey=example_apivalue'
+  - 'encryptionkey=afefa==e332*u13=971mldq'
+  path: '/mnt/e/Programming/truck-world/projects/server/linux/nakama/data/modules/'
+  http_key: 'defaulthttpkey'
+
+socket:
+  server_key: 'defaultkey'
+  port: 7350
+  max_message_size_bytes: 4096 # bytes
+  read_timeout_ms: 10000
+  write_timeout_ms: 10000
+  idle_timeout_ms: 60000
+  write_wait_ms: 5000
+  pong_wait_ms: 10000
+  ping_period_ms: 8000 # Must be less than pong_wait_ms
+  outgoing_queue_size: 16
+
+session:
+  encryption_key: 'defaultencryptionkey'
+  token_expiry_sec: 60
+    # refresh_encryption_key: 'defaultrefreshencryptionkey'
+    # refresh_token_expiry_sec: 3600
+
+social:
+  steam:
+  publisher_key: ''
+  app_id: 0
+
+console:
+  port: 7351
+  username: 'admin'
+  password: 'Pass@987!worD'
+
+cluster:
+  join:
+  - '10.0.0.2:7352'
+  - '10.0.0.3:7352'
+  gossip_bindaddr: '0.0.0.0'
+  gossip_bindport: 7352
+  rpc_port: 7353
+  local_priority: true
+  work_factor_interval_ms: 1000
+
+matchmaker:
+  max_tickets: 2
+  interval_sec: 15
+  max_intervals: 3
+
+iap:
+  apple:
+    shared_password: 'password'
+  google:
+    client_email: 'email@google.com'
+    private_key: 'pk'
+  huawei:
+    public_key: 'pk'
+    client_id: 'id'
+    client_secret: 'secret'
